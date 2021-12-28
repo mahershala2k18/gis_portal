@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- bootstrap css  -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+    <!-- leaflet css  -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+
+    <!-- fontawesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!-- style css  -->
+    <link rel="stylesheet" href="./lib/css/style.css" />
+
+    <!--site icon-->
+    <link rel="icon" href="./img/terra_2_icon.ico" />
+
+    <!--leaflet search css-->
+    <link rel="stylesheet" href="./lib/css/leaflet-search.css" />
+
+    <!-- sidebar -->
+    <link rel="stylesheet" href="./lib/css/L.Control.Sidebar.css">
+
+    <!-- measure_control -->
+    <link rel="stylesheet" href="./lib/css/leaflet-measure.css">
+
+    <!--perfect-scrollbar -->
+    <link rel="stylesheet" href="./lib/css/perfect-scrollbar.css">
+
+    <!--perfect-scrollbar JS -->
+    <script src="./lib/js/perfect-scrollbar.js"></script>
+
+    <!-- leaflet easy button -->
+    <link rel="stylesheet" href="./lib/css/easy-button.css">
+
+
+
+
+
+        <title>Map | GIS portal</title>
+    </head>
+
+    <body>
+        <section id="nav-bar">
+            <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #40bb8c">
+                <a class="navbar-brand" href="./index.html" style="font-weight: bold; color: #fafafa">CaVaTeCo-GIS Portal</a
+            >
+            <button
+              class="navbar-toggler"
+              type="button "
+              data-toggle="collapse "
+              data-target="#navbarNav "
+              aria-controls="navbarNav "
+              aria-expanded="false "
+              aria-label="Toggle navigation "
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav ">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="./index.html"
+                      >Home<span class="sr-only">(current)</span></a
+                    >
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./about.html">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="data.html">Data</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Links Úteis
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index: 3000;">
+                        <a class="dropdown-item" href="https://sites.google.com/terrafirma.co.mz/cavateco/cavateco">Cavateco Main</a>
+                        <a class="dropdown-item" href="https://sites.google.com/terrafirma.co.mz/cavateco-resultados">Projectos em Curso</a>
+                    </div>
+                </li>
+                </ul>
+                </div>
+            </nav>
+        </section>
+
+      <div class="container-fluid">
+        <div class="row">
+            <div class="left-sidebar" id='sidebar'>
+                <!-- cards are being inserted here by JS function -->
+            </div>
+
+            <div class="col-md-12" id="map">
+                <div class="leaflet-control" id="spiner_div">
+                    <div class="loader"></div>
+                </div>
+                <div class="right-sidebar mb-2 " id='details_panel' style="border: 1px solid #dadada; height: 100vh; border-radius: 0px;">
+                    null
+                </div>
+                <div class="leaflet-control map-coordinate"></div>
+                <!-- <div class="leaflet-control legend"></div> -->
+                <div class="leaflet-control basic-functions">
+                    <div class="default-view btns" data-toggle="tooltip " title="Default zoom level (Home) ">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div class="full-screen btns">
+                        <i class="fas fa-expand-arrows-alt" data-toggle="tooltip " title="View map on full screen "></i>
+                    </div>
+
+                    <div class="layer-info btns">
+                        <i class="fas fa-info" data-toggle="tooltip " title="Info about layer "></i>
+                    </div>
+
+                    <div class="print-map btns">
+                        <i class="fas fa-print" data-toggle="tooltip " title="Print map "></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<!-- jquery  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js " integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin=" anonymous "></script>
+
+<!-- bootstrap js  -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js "></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js "></script>
+
+<!-- leaflet js  -->
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js "></script>
+
+<!-- leaf-let sidebar -->
+<script src="./lib/js/L.Control.Sidebar.js"></script>
+
+<!-- leaflet easy button JS-->
+<script src="./lib/js/easy-button.js"></script>
+
+<!-- measure_control -->
+<script src="./lib/js/leaflet-measure.js"></script>
+
+<!-- leaflet browser print  -->
+<script src="./lib/js/leaflet.browser.print.min.js "></script>
+
+<!-- tilelayer betterWMS  -->
+<script src="./lib/js/L.TileLayer.BetterWMS.js "></script>
+
+<!-- main js files  -->
+<script src="./lib/js/main.js "></script>
+<!-- <script src="./lib/js/axios.js"></script> -->
+<script src="./lib/js/wms-capabilities.min.js"></script>
+<script src="./lib/js/leaflet-search.js"></script>
+
+<script src="./lib/js/layers.js "></script>
+<script src="./lib/js/LayerCard_Generator_warehouse.js"></script>
+<script src="./lib/js/warehouse.js"></script>
+
+<script src="./lib/js/sidebar_button_opener.js"></script>
+
+<script src="./lib/js/spinerControl.js"></script>
+
+<script src="./lib/js/leaflet-control.js "></script>
+<script src="./lib/js/povoados_onclick.js"></script>
+
+<script src="./lib/js/loadLayers.js"></script>
+<script src="./lib/js/metrics_array.js"></script>
+<script src="./lib/js/request_metrics.js"></script>

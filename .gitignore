@@ -1,0 +1,5 @@
+#ignore following files
+metrics_array.js
+warehouse.js
+layers_wfs
+leaflet_control.js
